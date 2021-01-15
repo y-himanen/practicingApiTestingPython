@@ -75,5 +75,5 @@ class StoreTest(BaseTest):
                 ItemModel('test', 19.99, 1).save_to_db()
 
                 response = client.get('/stores')
-                self.assertDictEqual({'stores': [{'name': 'test', 'items': [{'name': 'test', 'price': 19.99}]}]},
+                self.assertDictEqual({'stores': [{'id': 1, 'name': 'test', 'items': [{'name': 'test', 'price': 19.99}]}]},
                                      json.loads(response.data))
